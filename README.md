@@ -17,6 +17,10 @@ Aplicação funcionando via GitHub Codespaces:
 
 https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev
 
+Tela avaliativa
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/avaliativa
+
 ---
 
 ## Descrição do projeto
@@ -275,11 +279,7 @@ As rotas REST implementadas seguem os fluxos definidos nos diagramas de sequênc
 
 ### Teste pelo navegador
 
-Acesse:
-
-```txt
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev
-```
+Por meio dos link acima 
 
 Fluxo recomendado:
 
