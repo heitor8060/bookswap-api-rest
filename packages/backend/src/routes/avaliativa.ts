@@ -27,11 +27,7 @@ function extrairIdsDosLivros(valor: unknown): string[] {
     .filter((id): id is string => typeof id === 'string' && id.length > 0);
 }
 
-/**
- * ROTA 1
- * POST /api/avaliativa/usuarios
- * Cria usuário.
- */
+
 router.post('/usuarios', async (req: Request, res: Response): Promise<any> => {
   try {
     const { name, nome, email, password, senha, location } = req.body;
@@ -83,11 +79,7 @@ router.post('/usuarios', async (req: Request, res: Response): Promise<any> => {
   }
 });
 
-/**
- * ROTA 2
- * POST /api/avaliativa/login
- * Login do usuário.
- */
+
 router.post('/login', async (req: Request, res: Response): Promise<any> => {
   try {
     const { email, password, senha } = req.body;
@@ -139,11 +131,7 @@ router.post('/login', async (req: Request, res: Response): Promise<any> => {
   }
 });
 
-/**
- * ROTA 3
- * GET /api/avaliativa/usuarios/:id
- * Busca perfil do usuário.
- */
+
 router.get(
   '/usuarios/:id',
   authenticate,
@@ -189,11 +177,7 @@ router.get(
   }
 );
 
-/**
- * ROTA 4
- * POST /api/avaliativa/livros
- * Cadastra livro no inventário do usuário logado.
- */
+
 router.post(
   '/livros',
   authenticate,
@@ -235,11 +219,7 @@ router.post(
   }
 );
 
-/**
- * ROTA 5
- * GET /api/avaliativa/livros/disponiveis
- * Lista livros disponíveis para troca.
- */
+
 router.get(
   '/livros/disponiveis',
   authenticate,
@@ -274,11 +254,6 @@ router.get(
   }
 );
 
-/**
- * ROTA 6
- * POST /api/avaliativa/trocas
- * Cria proposta de troca.
- */
 router.post(
   '/trocas',
   authenticate,
@@ -373,8 +348,7 @@ router.post(
             chatId: chat.id,
             status: 'pending',
 
-            // Importante:
-            // Salvamos apenas os IDs para manter compatibilidade com as rotas originais do projeto.
+
             booksOffered: livrosOferecidosIds,
             booksRequested: livrosSolicitadosIds,
           },
@@ -404,11 +378,7 @@ router.post(
   }
 );
 
-/**
- * ROTA 7
- * POST /api/avaliativa/trocas/:id/aceitar
- * Aceita uma proposta de troca e transfere os livros entre os usuários.
- */
+
 router.post(
   '/trocas/:id/aceitar',
   authenticate,
