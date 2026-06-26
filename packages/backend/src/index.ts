@@ -13,6 +13,7 @@ import proposalsRoutes from './routes/proposals';
 import tradesRoutes from './routes/trades';
 import usersRoutes from './routes/users';
 import { connectRedis } from './services/redis';
+import avaliativaRoutes from './routes/avaliativa';
 
 dotenv.config();
 
@@ -78,6 +79,7 @@ app.use('/api/rooms', roomsRoutes);
 app.use('/api/proposals', proposalsRoutes);
 app.use('/api/trades', tradesRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/avaliativa', avaliativaRoutes);
 
 // Start server
 const startServer = async () => {
