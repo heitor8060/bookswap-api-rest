@@ -33,7 +33,7 @@ A API REST foi implementada no backend com base nos diagramas de classe e sequê
 
 Cadastro:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/register
+https://bookswap-api-rest.onrender.com/register
 
 Login:
 
