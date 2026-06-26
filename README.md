@@ -25,6 +25,40 @@ O BookSwap é uma aplicação web para troca de livros entre usuários. O sistem
 
 A API REST foi implementada no backend com base nos diagramas de classe e sequência produzidos nas etapas anteriores da disciplina.
 
+### Rotas da aplicação
+
+Cadastro:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/register
+
+Login:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/login
+
+Página inicial:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/
+
+Livros:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/books
+
+Matches:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/matches
+
+Trocas:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/trades
+
+Usuários:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/users
+
+Perfil:
+
+https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/profile
+
 ---
 
 ## Telas da aplicação
