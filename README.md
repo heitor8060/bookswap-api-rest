@@ -376,6 +376,7 @@ VITE_API_URL=https://animated-space-eureka-5656qqggwxpfv5gg-5000.app.github.dev
 * Express
 * TypeScript
 * Prisma ORM
+* Render
 * PostgreSQL
 * Redis
 * Docker
