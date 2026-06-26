@@ -397,8 +397,6 @@ As rotas REST implementadas seguem esses fluxos.
 
 ### Diagrama sequencial: cadastro de usuário
 
-Fluxo representado no PDF:
-
 ```txt
 FrontEnd -> route : post("/usuario", req)
 route -> ctrl : salvar(req, res)
@@ -458,8 +456,6 @@ GET /api/avaliativa/livros/disponiveis
 
 ### Diagrama sequencial: proposta de troca
 
-Fluxo representado no PDF:
-
 ```txt
 FrontEnd -> route : post("/troca", req)
 route -> ctrl : salvar(req, res)
@@ -489,10 +485,6 @@ POST /api/avaliativa/trocas/:id/aceitar
 ---
 
 ## Outras APIs REST implementadas no sistema completo
-
-Além das 7 rotas da avaliativa, o backend possui outras rotas REST que fazem parte do funcionamento completo da aplicação BookSwap.
-
-Essas rotas não são o foco principal dos diagramas da avaliativa, mas também são APIs REST porque usam métodos HTTP como `GET`, `POST`, `PUT`, `PATCH` e `DELETE`.
 
 ---
 
@@ -662,9 +654,6 @@ Essas rotas não são o foco principal dos diagramas da avaliativa, mas também 
 | `/api/trades` | 12 |
 | `/api/users` | 7 |
 | `/api/avaliativa` | 7 |
-| **Total de rotas REST da API** | **80** |
-
-Das 80 rotas listadas, **7 rotas** são destacadas como rotas específicas da atividade avaliativa, pois estão diretamente relacionadas aos diagramas de classe e sequência dos PDFs.
 
 ---
 
