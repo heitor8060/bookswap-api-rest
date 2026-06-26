@@ -279,7 +279,7 @@ As rotas REST implementadas seguem os fluxos definidos nos diagramas de sequênc
 
 ### Teste pelo navegador
 
-Por meio dos link acima 
+Por meio dos links acima 
 
 Fluxo recomendado:
 
