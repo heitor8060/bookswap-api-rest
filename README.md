@@ -13,13 +13,13 @@ Repositório GitHub:
 
 https://github.com/heitor8060/bookswap-api-rest
 
-Aplicação funcionando via GitHub Codespaces:
+Aplicação funcionando via Render:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev
+https://bookswap-api-rest.onrender.com/login
 
 Tela avaliativa
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/avaliativa
+https://bookswap-api-rest.onrender.com/avaliativa
 
 ---
 
@@ -37,31 +37,31 @@ https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/register
 
 Login:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/login
+bookswap-api-rest.onrender.com/login
 
 Página inicial:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/
+bookswap-api-rest.onrender.com
 
 Livros:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/books
+bookswap-api-rest.onrender.com/books
 
 Matches:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/matches
+bookswap-api-rest.onrender.com/matches
 
 Trocas:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/trades
+bookswap-api-rest.onrender.com/trades
 
 Usuários:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/users
+bookswap-api-rest.onrender.com/users
 
 Perfil:
 
-https://animated-space-eureka-5656qqggwxpfv5gg-3000.app.github.dev/profile
+bookswap-api-rest.onrender.com/profile
 
 ---
 
