@@ -13,6 +13,7 @@ import { TradesPage } from './pages/TradesPage';
 import { UsersPage } from './pages/UsersPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { AvaliativaPage } from './pages/AvaliativaPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <ToastProvider>
         <AuthProvider>
         <Routes>
+          <Route path="/avaliativa" element={<AvaliativaPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route

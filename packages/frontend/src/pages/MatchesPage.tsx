@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { api } from '../lib/api';
+import { api, apiAvaliativa } from '../lib/api';
 import { SearchInput } from '../components/SearchInput';
 import { ProfileSummaryModal } from '../components/ProfileSummaryModal';
 import { LoadingButton } from '../components/LoadingButton';
@@ -121,6 +121,41 @@ export const MatchesPage: React.FC = () => {
 
   const perfectMatches = filteredMatches.filter((m) => m.matchType === 'perfect');
   const partialMatches = filteredMatches.filter((m) => m.matchType !== 'perfect');
+  const handleProposeTrade = async (match: Match) => {
+  try {
+    const livrosOferecidosIds = match.matchingBooks
+      .filter((book) => book.userBookId)
+      .map((book) => book.userBookId);
+
+    const livrosSolicitadosIds = match.matchingBooks
+      .filter((book) => book.matchedUserBookId)
+      .map((book) => book.matchedUserBookId);
+
+    if (livrosOferecidosIds.length === 0 || livrosSolicitadosIds.length === 0) {
+      showModal(
+        'Erro',
+        'Este match não possui livros suficientes para criar uma proposta.',
+        'error'
+      );
+      return;
+    }
+
+    await apiAvaliativa.post('/trocas', {
+      receptorId: match.matchedUser.id,
+      livrosOferecidosIds,
+      livrosSolicitadosIds,
+    });
+
+    showModal('Sucesso', 'Proposta de troca enviada!', 'success');
+    navigate('/trades');
+  } catch (error: any) {
+    showModal(
+      'Erro',
+      error.response?.data?.error || 'Erro ao criar proposta de troca',
+      'error'
+    );
+  }
+};
 
   return (
     <div className="min-h-screen bg-gray-50">

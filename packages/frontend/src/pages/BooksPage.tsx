@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useToast } from '../components/Toast';
 import { LoadingSpinner } from '../components/LoadingSpinner';
-import { api } from '../lib/api';
+import { api, apiAvaliativa } from '../lib/api';
 
 interface Book {
   id: string;
@@ -115,21 +115,23 @@ export const BooksPage: React.FC = () => {
     e.preventDefault();
 
     try {
-      const endpoint = activeTab === 'inventory' ? '/books/inventory' : '/books/wishlist';
-      const data: any = { title, author, isbn: isbn || undefined };
+const data: any = {
+  title,
+  titulo: title,
+  author,
+  autor: author,
+  isbn: isbn || undefined,
+};
 
-      if (activeTab === 'inventory') {
-        data.condition = condition;
-        data.description = description || undefined;
-      }
+if (activeTab === 'inventory') {
+  data.condition = condition;
+  data.condicao = condition;
+  data.description = description || undefined;
 
-      // Add roomId if selected
-      if (selectedRoomId) {
-        data.roomId = selectedRoomId;
-      }
-
-      await api.post(endpoint, data);
-
+  await apiAvaliativa.post('/livros', data);
+} else {
+  await api.post('/books/wishlist', data);
+}
       // Reset form
       setTitle('');
       setAuthor('');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { api } from '../lib/api';
+import { api, apiAvaliativa } from '../lib/api';
 
 interface Book {
   id: string;
@@ -112,34 +112,21 @@ export const TradesPage: React.FC = () => {
     }
   };
 
-  const handleAcceptTrade = async (tradeId: string) => {
-    if (!confirm('Accept this trade proposal? Books will be transferred immediately.')) return;
+const handleAcceptTrade = async (tradeId: string) => {
+  if (!confirm('Accept this trade proposal?')) return;
 
-    try {
-      const response = await api.post(`/trades/${tradeId}/accept`);
-      const { trade, transferResult } = response.data;
-      
-      // Determine which books the current user received
-      const isProposerUser = trade.proposerId === user?.id;
-      const receivedBooks = isProposerUser 
-        ? transferResult.transferredBooks.toProposer 
-        : transferResult.transferredBooks.toRecipient;
-      const givenBooks = isProposerUser 
-        ? transferResult.transferredBooks.toRecipient 
-        : transferResult.transferredBooks.toProposer;
-      
-      // Show completion modal with details
-      setCompletionDetails({ receivedBooks, givenBooks });
-      setShowCompletionModal(true);
-      setShowDetailsModal(false);
-      
-      // Refresh trades list and book list
-      fetchTrades();
-      fetchAvailableBooks(); // Refresh book list to update lock status
-    } catch (error: any) {
-      alert(error.response?.data?.error || 'Failed to accept trade');
-    }
-  };
+  try {
+    await apiAvaliativa.post(`/trocas/${tradeId}/aceitar`);
+
+    alert('Troca aceita com sucesso!');
+
+    setShowDetailsModal(false);
+    fetchTrades();
+    fetchAvailableBooks();
+  } catch (error: any) {
+    alert(error.response?.data?.error || 'Failed to accept trade');
+  }
+};
 
   const handleRejectTrade = async (tradeId: string) => {
     const reason = prompt('Reason for rejection (optional):');

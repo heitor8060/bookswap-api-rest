@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { api } from '../lib/api';
+import { apiAvaliativa } from '../lib/api';
 
 interface User {
   id: string;
@@ -36,25 +36,51 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setIsLoading(false);
   }, []);
 
-  const login = async (email: string, password: string) => {
-    const response = await api.post('/auth/login', { email, password });
-    const { user: userData, token: userToken } = response.data;
+const login = async (email: string, password: string) => {
+  const response = await apiAvaliativa.post('/login', {
+    email,
+    senha: password,
+    password,
+  });
 
-    setUser(userData);
-    setToken(userToken);
-    localStorage.setItem('token', userToken);
-    localStorage.setItem('user', JSON.stringify(userData));
-  };
+  const { user: userData, token: userToken } = response.data;
 
-  const register = async (name: string, email: string, password: string, location: string) => {
-    const response = await api.post('/auth/register', { name, email, password, location });
-    const { user: userData, token: userToken } = response.data;
+  setUser(userData);
+  setToken(userToken);
 
-    setUser(userData);
-    setToken(userToken);
-    localStorage.setItem('token', userToken);
-    localStorage.setItem('user', JSON.stringify(userData));
-  };
+  localStorage.setItem('token', userToken);
+  localStorage.setItem('user', JSON.stringify(userData));
+};
+
+const register = async (
+  name: string,
+  email: string,
+  password: string,
+  location: string
+) => {
+  const response = await apiAvaliativa.post('/usuarios', {
+    nome: name,
+    name,
+    email,
+    senha: password,
+    password,
+    location,
+  });
+
+  const loginResponse = await apiAvaliativa.post('/login', {
+    email,
+    senha: password,
+    password,
+  });
+
+  const { user: userData, token: userToken } = loginResponse.data;
+
+  setUser(userData);
+  setToken(userToken);
+
+  localStorage.setItem('token', userToken);
+  localStorage.setItem('user', JSON.stringify(userData));
+};
 
   const logout = () => {
     setUser(null);
